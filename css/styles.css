@@ -1,15 +1,49 @@
 .top_movies {
   display: flex;
+  flex-direction: column;
   border: 2px solid black;
   padding: 5px;
   margin: 5px;
-  font-size: 1.8vh;
+  height: 40vh;
+  width: 21%;
   background-color: white;
+}
+
+.top_movies p {
+  display: flex;
+  align-self: center;
   font-style: black;
-  height: fit-content;
-  width: fit-content;
+  font-size: 1.8vh;
+}
+.top_movies img {
+  display: flex;
+  align-self: center;
+  padding-bottom: 5px;
+  width: 15vh;
+  height: auto;
 }
 
 .containerBox {
   display: flex;
+  flex-wrap: wrap;
+}
+
+/*  Loading animation from the module 3 */
+.loader {
+  border: 16px solid white;
+  border-top: 16px solid darkred;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+/* The animation code */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

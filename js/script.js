@@ -26,15 +26,16 @@ async function doFetch(url) {
     for (let i = 0; i < movies.length; i++) {
 
         //  Creating a new class with a div for the new inner HTML
+        //  The elements in the <div> needs their own <p> so that I get a multi-lined output in the HTML
         resultsContainer.innerHTML +=
             `
             <div class = "top_movies">
+            <img src="${movies[i].image}">
             <p>Title: ${movies[i].fullTitle}</p>
             <p>IMDB Rank: ${movies[i].rank}</p>
             <p>IMDB Rating: ${movies[i].imDbRating}</p>
             </div>
             `;
-
 
         if (i === 7) {
             break;
