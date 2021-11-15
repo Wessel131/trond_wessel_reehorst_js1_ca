@@ -1,10 +1,11 @@
+/* The individual containment boxes for each product */
 .top_movies {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
   padding: 5px;
   margin: 5px;
-  height: 40vh;
+  height: fit-content;
   width: 21%;
   background-color: white;
 }
@@ -22,7 +23,7 @@
   width: 15vh;
   height: auto;
 }
-
+/* General containment box for the divs */
 .containerBox {
   display: flex;
   flex-wrap: wrap;

@@ -15,13 +15,17 @@ async function doFetch(url) {
     //  Fetching information given from the API
     const response = await fetch(url);
     const results = await response.json(url);
-    const movies = results.items;
+    return movies = results.items;
+};
+console.log(doFetch);
+
+async function init(doFetch) {
 
     //  Setting the HTML in the target <div> to empty
-    resultsContainer.innerHTML = "";
+    details.innerHTML = "";
 
     //  Posting the API results and the array I want to target
-    console.log(movies);
+    /* console.log(movies); */
 
     //  Looping for the array
     for (let i = 0; i < movies.length; i++) {
@@ -29,7 +33,7 @@ async function doFetch(url) {
 
         //  Creating a new class with a div for the new inner HTML
         //  The elements in the <div> needs their own <p> so that I get a multi-lined output in the HTML
-        resultsContainer.innerHTML +=
+        details.innerHTML +=
             `
             <div class = "top_movies">
             <img src="${movies[i].image}">
@@ -47,4 +51,5 @@ async function doFetch(url) {
 };
 
 //  Calling the function "doFetch" with the relevant "const url"
+init(url);
 doFetch(url);
