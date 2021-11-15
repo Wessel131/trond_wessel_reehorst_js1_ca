@@ -4,9 +4,8 @@
 
 // Importing local API file, saved from the IMDB API pool.
 import {
-    json
+    data
 } from '../data/data.js';
-const url = makehtml(json);
 
 //  The URL with API-key - https://imdb-api.com/en/API/Top250Movies/k_s22ggr65
 // const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65";
@@ -16,11 +15,11 @@ const resultsContainer = document.querySelector(".containerBox");
 // const details = document.querySelector(".details");
 
 //  The general function for fetching the API information
-async function doFetch(url) {
+async function doFetch(data) {
 
     //  Fetching information given from the API
-    const response = await fetch(url);
-    const results = await response.json(url);
+    const response = await fetch(data);
+    const results = await response.json(data);
     const movies = results.items;
 
     //  Setting the HTML in the target <div> to empty
@@ -53,4 +52,4 @@ async function doFetch(url) {
 };
 
 //  Calling the function "doFetch" with the relevant "const url"
-doFetch(url);
+doFetch(data);
