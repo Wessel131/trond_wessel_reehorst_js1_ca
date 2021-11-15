@@ -7,7 +7,7 @@ const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65";
 
 //  Searching for the <div> I want to inject my HTML into
 const resultsContainer = document.querySelector(".containerBox");
-const details = document.querySelector(".details");
+// const details = document.querySelector(".details");
 
 //  The general function for fetching the API information
 async function doFetch(url) {
