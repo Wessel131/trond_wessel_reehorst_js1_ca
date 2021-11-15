@@ -3,7 +3,9 @@
 //  I want to display the top 250 movies list
 
 // Importing local API file, saved from the IMDB API pool.
-import json from '../data/data.json';
+import {
+    json
+} from '../data/data.js';
 const url = makehtml(json);
 
 //  The URL with API-key - https://imdb-api.com/en/API/Top250Movies/k_s22ggr65
