@@ -1,3 +1,5 @@
+/*  Index CSS */
+
 /* The individual containment boxes for each product */
 .top_movies {
   display: flex;
@@ -48,3 +50,5 @@
     transform: rotate(360deg);
   }
 }
+
+/* Details CSS */
