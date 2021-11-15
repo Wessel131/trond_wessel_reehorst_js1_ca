@@ -6,6 +6,8 @@
 import {
     data
 } from '../data/data.js';
+const url = data;
+// console.log(data);
 
 //  The URL with API-key - https://imdb-api.com/en/API/Top250Movies/k_s22ggr65
 // const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65";
@@ -15,17 +17,22 @@ const resultsContainer = document.querySelector(".containerBox");
 // const details = document.querySelector(".details");
 
 //  The general function for fetching the API information
-async function doFetch(data) {
-
+async function doFetch(url) {
+    //  For online data import and converstion
     //  Fetching information given from the API
-    const response = await fetch(data);
-    const results = await response.json(data);
-    const movies = results.items;
+
+    // const response = await fetch(url);
+    // const results = await response.json(url);
+    // const movies = results.items;
+
+
+    // For local data import
+    const movies = data.items;
 
     //  Setting the HTML in the target <div> to empty
     resultsContainer.innerHTML = "";
 
-    //  Posting the API results and the array I want to target
+    //  Posting the API results and the array I want to target in my console
     console.log(movies);
 
     //  Looping for the array
@@ -47,9 +54,9 @@ async function doFetch(data) {
 
         if (i === 7) {
             break;
-        };
-    };
+        }
+    }
 };
 
 //  Calling the function "doFetch" with the relevant "const url"
-doFetch(data);
+doFetch(url);
