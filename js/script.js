@@ -14,17 +14,16 @@ const url = data;
 
 //  Searching for the <div> I want to inject my HTML into
 const resultsContainer = document.querySelector(".containerBox");
-// const details = document.querySelector(".details");
+const details = document.querySelector(".details");
 
 //  The general function for fetching the API information
-async function doFetch(url) {
+async function doFetch() {
     //  For online data import and converstion
     //  Fetching information given from the API
 
     // const response = await fetch(url);
     // const results = await response.json(url);
     // const movies = results.items;
-
 
     // For local data import
     const movies = data.items;
@@ -54,9 +53,9 @@ async function doFetch(url) {
 
         if (i === 7) {
             break;
-        }
-    }
+        };
+    };
 };
 
 //  Calling the function "doFetch" with the relevant "const url"
-doFetch(url);
+doFetch();
