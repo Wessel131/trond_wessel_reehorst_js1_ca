@@ -4,8 +4,7 @@
 
 // Importing local API file, saved from the IMDB API pool.
 import json from '../data/json.json';
-const gurl = json;
-const url = makeHTML(gurl)
+const url = makeHTML(json)
 //  The URL with key - https://imdb-api.com/en/API/Top250Movies/k_s22ggr65
 // const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65";
 
