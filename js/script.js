@@ -3,9 +3,10 @@
 //  I want to display the top 250 movies list
 
 // Importing local API file, saved from the IMDB API pool.
-import json from '../data/json.json';
-const url = makeHTML(json)
-//  The URL with key - https://imdb-api.com/en/API/Top250Movies/k_s22ggr65
+import json from '../data/data.json';
+const url = makehtml(json);
+
+//  The URL with API-key - https://imdb-api.com/en/API/Top250Movies/k_s22ggr65
 // const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65";
 
 //  Searching for the <div> I want to inject my HTML into
