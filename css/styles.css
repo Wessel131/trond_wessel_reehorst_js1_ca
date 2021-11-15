@@ -1,0 +1,15 @@
+.top_movies {
+  display: flex;
+  border: 2px solid black;
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.8vh;
+  background-color: white;
+  font-style: black;
+  height: fit-content;
+  width: fit-content;
+}
+
+.containerBox {
+  display: flex;
+}
