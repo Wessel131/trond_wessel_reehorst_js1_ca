@@ -1,6 +1,7 @@
 //  Level 1 
 //  Fetching API from IMDB Documentation
 //  I want to display the top 250 movies list
+// Note that I wanted to create a general function for the API, but I couldn't.
 
 // Importing local API file, saved from the IMDB API pool.
 import {

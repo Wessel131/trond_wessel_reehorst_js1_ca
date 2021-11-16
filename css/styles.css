@@ -1,5 +1,11 @@
 /*  Index CSS */
 
+/* General containment box for the divs */
+.containerBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* The individual containment boxes for each product */
 .top_movies {
   display: flex;
@@ -25,10 +31,15 @@
   width: 15vh;
   height: auto;
 }
-/* General containment box for the divs */
-.containerBox {
+
+.nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+}
+.nav a {
+  display: flex;
+  font-size: 2vh;
+  padding: 10px;
 }
 
 /*  Loading animation from the module 3 */
@@ -55,5 +66,11 @@
 
 .details {
   display: flex;
+  flex-wrap: wrap;
+}
+.details a {
+  display: flex;
   align-self: center;
+  font-style: black;
+  font-size: 1.8vh;
 }
