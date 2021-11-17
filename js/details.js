@@ -22,6 +22,7 @@ const url = data.items;
 console.log(url);
 
 async function fetchMovie() {
+    detailContainer.innerHTML = "";
     try {
         //  Online response 
         // const response = await fetch(url);
