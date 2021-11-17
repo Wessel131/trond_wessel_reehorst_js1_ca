@@ -1,63 +1,84 @@
+var url5 = "https://the-one-api.dev/v2/book/";
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url5);
+
+xhr.setRequestHeader("Accept", "application/json");
+xhr.setRequestHeader("Authorization", "Bearer {Y1Ad4LrfyuHpAVfXmVT_}");
+
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+        console.log(xhr.status);
+        console.log(xhr.responseText);
+    }
+};
+
+
 //  Querystring search. I need the ID of the movie selected from the index.html
 const detailContainer = document.querySelector(".details");
 
-const queryString = document.location.search;
+// const queryString = document.location.search;
 
-const params = new URLSearchParams(queryString);
+// const params = new URLSearchParams(queryString);
 
-const id = params.get("id");
+// const id = params.get("id");
 
 //  Checking for the correct ouput
-console.log(id);
+// console.log(id);
 
 // Online API data pool
-// const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65/" + id;
-// const url2 = "https://www.imdb.com/title/" + id + "/?ref_=k_s22ggr65/";
+const url = "https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582";
+
 // console.log(url);
 
-//  local API data pool
-import {
-    data
-} from '../data/data.js';
-const dataPool = data.items;
-console.log(dataPool);
-const url = dataPool + id;
+// async function fetchMovie() {
+
+//     detailContainer.innerHTML = "";
+
+//     try {
+//         //   Online response 
+//         const response = await fetch(url);
+//         const results = await response.json();
+//         const book = results;
+
+//         createHtml(book);
+
+//         console.log(book);
+
+//     } catch (error) {
+//         console.log(error);
+//         detailContainer.innerHTML = message("error", error);
+//     }
+
+// };
+
+// fetchMovie();
 
 async function fetchMovie() {
+
     detailContainer.innerHTML = "";
+
     try {
-        //  Online response 
-        // const response = await fetch(url);
-        // const results = await response.json();
-        // const MovieDetails = results.items;
+        const response = await fetch(url);
+        const json = await response.json();
+        const details = json;
 
+        console.log(details);
 
-
-        // Local response
-        const MovieDetails = url;
-        // console.log(details);
-        console.log(MovieDetails);
-
-        createHtml(MovieDetails);
+        createHtml(details);
 
     } catch (error) {
         console.log(error);
-        detailContainer.innerHTML = message("error", error);
     }
-
 };
 
 fetchMovie();
 
-function createHtml(MovieDetails) {
-    detailContainer.innerHTML += `
-    <div class = "details">
-    <img src="${MovieDetails.image}">
-    <p>${MovieDetails.fullTitle}</p>
-    <p>${MovieDetails.crew}</p>
-    <p>${MovieDetails.year}</p>
-    <p>IMDB Rank: ${MovieDetails.rank}</p>
-    <p>IMDB Rating: ${MovieDetails.imDbRating}</p>
-    </div>
-    `;
+function createHtml(details) {
+    detailContainer.innerHTML +=
+        `<div class = "top_movies">
+        <p>Title: ${details.name}</p>
+        <p>ID: ${details._id}</p>
+        </div>
+        `;
 };
