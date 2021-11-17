@@ -12,13 +12,14 @@ console.log(id);
 
 // Online API data pool
 // const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65/" + id;
+const url = "https://www.imdb.com/title/" + id + "/?ref_=k_s22ggr65/"
 // console.log(url);
 
 //  local API data pool
-import {
-    data
-} from '../data/data.js';
-const url = data.items;
+// import {
+//     data
+// } from '../data/data.js';
+// const url = data.items;
 console.log(url);
 
 async function fetchMovie() {
@@ -32,7 +33,7 @@ async function fetchMovie() {
 
 
         // Local response
-        const MovieDetails = url + id;
+        const MovieDetails = url;
         // console.log(details);
         console.log(MovieDetails);
 
