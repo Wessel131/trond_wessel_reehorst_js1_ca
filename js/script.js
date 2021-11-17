@@ -4,14 +4,14 @@
 // Note that I wanted to create a general function for the API, but I couldn't.
 
 // Importing local API file, saved from the IMDB API pool.
-import {
-    data
-} from '../data/data.js';
-const url = data;
+// import {
+//     data
+// } from '../data/data.js';
+// const url = data;
 // console.log(data);
 
 //  The URL with API-key - https://imdb-api.com/en/API/Top250Movies/k_s22ggr65
-// const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65";
+const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65";
 
 //  Searching for the <div> I want to inject my HTML into
 const resultsContainer = document.querySelector(".containerBox");
@@ -22,14 +22,14 @@ async function doFetch() {
     //  For online data import and converstion
     //  Fetching information given from the API
 
-    // const response = await fetch(url);
-    // const results = await response.json(url);
-    // const movies = results.items;
+    const response = await fetch(url);
+    const results = await response.json(url);
+    const movies = results.items;
 
     // For local data import
-    const movies = data.items;
+    // const movies = url.items;
 
-    //  Setting the HTML in the target <div> to empty
+    //  Setting the HTML in the target <div> to empty to get rid of the visual loading div 
     resultsContainer.innerHTML = "";
 
     //  Posting the API results and the array I want to target in my console
@@ -45,10 +45,10 @@ async function doFetch() {
             `
             <div class = "top_movies">
             <img src="${movies[i].image}">
-            <p>Title: ${movies[i].fullTitle}</p>
+            <p>Title: ${movies[i].title}</p>
             <p>IMDB Rank: ${movies[i].rank}</p>
             <p>IMDB Rating: ${movies[i].imDbRating}</p>
-            <a class="details" href="details.html">More information</a>
+            <a class="details" href="details.html?id=${movies[i].id}">More information</a>
             </div>
             `;
 

@@ -31,6 +31,13 @@
   width: 15vh;
   height: auto;
 }
+.image_details {
+  display: flex;
+  align-self: center;
+  padding-bottom: 5px;
+  width: 15vh;
+  height: auto;
+}
 
 .nav {
   display: flex;
