@@ -11,27 +11,28 @@ const id = params.get("id");
 console.log(id);
 
 // Online API data pool
-const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65/" + id;
-console.log(url);
+// const url = "https://imdb-api.com/en/API/Top250Movies/k_s22ggr65/" + id;
+// console.log(url);
 
 //  local API data pool
-// import {
-//     data
-// } from '../data/data.js';
-// const url = data.items + id;
+import {
+    data
+} from '../data/data.js';
+const url = data.items;
+console.log(url);
 
 async function fetchMovie() {
     try {
         //  Online response 
-        const response = await fetch(url);
-        const results = await response.json();
-        const MovieDetails = results.items;
+        // const response = await fetch(url);
+        // const results = await response.json();
+        // const MovieDetails = results.items;
 
         console.log(MovieDetails);
 
         // Local response
-        // const details = url;
-        // console.log(details);
+        const MovieDetails = url;
+        console.log(details);
 
         createHtml(MovieDetails);
 
