@@ -28,11 +28,12 @@ async function fetchMovie() {
         // const results = await response.json();
         // const MovieDetails = results.items;
 
-        console.log(MovieDetails);
+
 
         // Local response
-        const MovieDetails = url;
-        console.log(details);
+        const MovieDetails = url + id;
+        // console.log(details);
+        console.log(MovieDetails);
 
         createHtml(MovieDetails);
 
