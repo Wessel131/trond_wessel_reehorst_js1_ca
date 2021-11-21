@@ -1,84 +1,52 @@
-var url5 = "https://the-one-api.dev/v2/book/";
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", url5);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Authorization", "Bearer {Y1Ad4LrfyuHpAVfXmVT_}");
-
-xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-        console.log(xhr.status);
-        console.log(xhr.responseText);
-    }
-};
-
-
 //  Querystring search. I need the ID of the movie selected from the index.html
+
+// const title = document.querySelector(".title");
+// const query = document.location.search;
+// const titleParams = new URLSearchParams(query);
+// const tit = params.get("strDrink")
+
 const detailContainer = document.querySelector(".details");
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
 
-// const queryString = document.location.search;
+// Checking for the correct ouput
+console.log(id);
 
-// const params = new URLSearchParams(queryString);
+// "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
 
-// const id = params.get("id");
+var urlId = "www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id;
 
-//  Checking for the correct ouput
-// console.log(id);
+// console.log(lookUp);
 
-// Online API data pool
-const url = "https://the-one-api.dev/v2/book/5cf5805fb53e011a64671582";
-
-// console.log(url);
-
-// async function fetchMovie() {
-
-//     detailContainer.innerHTML = "";
-
-//     try {
-//         //   Online response 
-//         const response = await fetch(url);
-//         const results = await response.json();
-//         const book = results;
-
-//         createHtml(book);
-
-//         console.log(book);
-
-//     } catch (error) {
-//         console.log(error);
-//         detailContainer.innerHTML = message("error", error);
-//     }
-
-// };
-
-// fetchMovie();
-
-async function fetchMovie() {
+async function fetch() {
 
     detailContainer.innerHTML = "";
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(urlId);
         const json = await response.json();
-        const details = json;
+        const lookUp = json;
 
-        console.log(details);
+        console.log(lookUp);
 
-        createHtml(details);
+        createDetails(lookUp);
 
     } catch (error) {
         console.log(error);
     }
 };
 
-fetchMovie();
+fetch();
 
-function createHtml(details) {
+lookUp.forEach(function createDetails() {
     detailContainer.innerHTML +=
         `<div class = "top_movies">
-        <p>Title: ${details.name}</p>
-        <p>ID: ${details._id}</p>
+        <p>Name: ${lookUp.strDrink}</p>
+        <p>Category: ${lookUp.strCategory}</p>
+        <p>Galss type: ${lookUp.strGlass}</p>
+        <p>${lookUp.strInstructions}</p>
+        <p></p>
         </div>
         `;
-};
+});

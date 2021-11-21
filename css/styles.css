@@ -81,3 +81,7 @@
   font-style: black;
   font-size: 1.8vh;
 }
+
+.title {
+  display: flex;
+}
