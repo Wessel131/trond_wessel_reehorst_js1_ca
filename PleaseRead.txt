@@ -1,0 +1,6 @@
+Hey guys,
+There wasn't a field to type in on the delivery page. This CA was hard. I'm very close to completing it, but when I reach out for help. I got some, but not what I needed. I thought the process behind studying was to reach out and receive guidance when you are stuck.
+
+The thing I take issue with is that when I ask for help. All I get is programming answers, when I'm not in any position to interpret what to do with that information. It feels like you are holding back information I should be getting, just so it can be a learning experience, which is fine when I’m able to interpret what is being said. I would appreciate that when being asked a question, you answer with examples or point me to the correct page on Moodle. I’m not expected to know all of this from the get-go and some of you seem to believe so.
+
+Finding the relevant resources online is difficult, because it’s in a format for developers and not students trying to gather information about one specific line of code, or subject.
